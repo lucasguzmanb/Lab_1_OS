@@ -21,18 +21,20 @@ int wordcounter=0;
 int linecounter=0;
 int bytecounter=0;
 
-	if ((fd=open(fileName,O_RDONLY,0666))<0) {
+if ((fd=open(fileName,O_RDONLY,0666))<0) {
 		perror("File does not exist\n");
 		exit(1);
- 	}	
+}	
 
 while ((n=read(fd,buf,N))>0)
-	if (buff[0]==" ")||(buff[0]=="	"){
-		wordcounter += wordcounter;
+	bytecounter++;
+	if (buff[0]==" ")||(buff[0]=="\t"){
+		wordcounter++;
 	}
 
 	if (buff[0]=="\n"){
-		linecounter += linecounter
+		wordcounter++;
+		linecounter++;
 	}
 
 	if (n<0) {
@@ -42,6 +44,8 @@ while ((n=read(fd,buf,N))>0)
  	else
  		close(fd);
 
+print("Number of words: %d",wordcounter);
+print("Number of lines %d",linecounter+1);
 	return 0;
 }
 
