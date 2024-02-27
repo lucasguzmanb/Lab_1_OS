@@ -1,3 +1,3 @@
 100496991, Aguado, Ignacio
-100496813, Guzmán, Lucas
-100495748, Martínez, Olaya
+100496813, Guzman, Lucas
+100495748, Martinez, Olaya

@@ -19,29 +19,31 @@ int main(int argc, char *argv[]) {
     int linecounter = 0;
     int bytecounter = 0;
     int fd;
+
     if ((fd = open(fileName, O_RDONLY, 0666)) < 0) {
         perror("File does not exist\n");
         exit(1);
     }
+
     int n;
-    while ((n = read(fd, buf, N)) > 0) {
+    while ((n = read(fd, &buf, N)) > 0) {
         bytecounter++;
-        if ((buf[0] == " ") || (buf[0] == "\t")) {
+        if ((buf[0] == ' ') || (buf[0] == '\t')) {
             wordcounter++;
         }
 
-        if (buf[0] == "\n") {
+        if (buf[0] == '\n') {
             wordcounter++;
             linecounter++;
         }
 
         if (n < 0) {
             perror("Read error occured");
-            return -1;
-        } else
             close(fd);
+            return -1;
+        }
     }
-    print("Number of words: %d", wordcounter);
-    print("Number of lines %d", linecounter + 1);
+    close(fd);
+    printf("%d %d %d %s\n", linecounter + 1, wordcounter + 1, bytecounter, fileName);
     return 0;
 }
