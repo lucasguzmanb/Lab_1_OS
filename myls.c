@@ -13,7 +13,7 @@ int main(int argc, char *argv[]){
 
     if (argc == 1) {
        dirName = argv[1];  //usage 1, directory given as an argument
-    }else{
+    }else if (argc == 0){
         dirName = getcwd(NULL, 0); //usage 2, open current directory
         if (dirName == NULL){
             return -1;
