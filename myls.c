@@ -12,12 +12,12 @@ int main(int argc, char *argv[]){
     char *dirName; // define the directory name
 
     if (argc == 1) {
-       dirName = argv[1];  //usage 1, directory given as an argument
-    }else if (argc == 0){
-        dirName = getcwd(NULL, 0); //usage 2, open current directory
+       dirName = getcwd(NULL, 0); //usage 2, open current directory
         if (dirName == NULL){
             return -1;
         }
+    }else if (argc == 0){
+        dirName = argv[1];  //usage 1, directory given as an argument
     }
     int dirSize = 0;
     DIR *dir = opendir(dirName); // try to open the directory
