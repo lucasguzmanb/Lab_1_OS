@@ -56,7 +56,7 @@ while ((n=read(fd,buf,N))>0){
  	else
  		close(fd);
 
-printf("%d %d %d %s",linecounter+1,wordcounter+1,bytecounter,fileName);
+printf("%d %d %d %s",linecounter,wordcounter+1,bytecounter,fileName);
 	return 0;
 }
 
