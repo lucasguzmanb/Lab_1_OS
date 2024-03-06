@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
     }
     int dirSize = 0;
     DIR *dir = opendir(dirName); // try to open the directory
-    if (dir == NULL) {           // if there is an error opening the directory or it doesnt exist, print an error an return -1
+    if (dir == NULL) {           // if there is an error opening the directory or it doesn't exist, print an error and return -1
         printf("Error opening the directory\n");
         return -1;
     } else {
