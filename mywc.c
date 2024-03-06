@@ -31,19 +31,21 @@ int main(int argc, char *argv[]) {
         if (buf[0] == '\n') {
             linecounter++;
         }
-
-        if (buf[0] == ' ' || buf[0] == '\t' || buf[0] == '\n') {
-            if (word_char) {
-
+		if (word_char==1){
+        	if (buf[0] == ' ' || buf[0] == '\t' || buf[0] == '\n'){
                 word_char = 0;
                 wordcounter++;
-            }
-
-        } else {
-            word_char = 1;
-        }
+			}else{
+				continue;
+			}
+        } 
+		else{
+			if (buf[0] != ' ' && buf[0] != '\t' && buf[0] != '\n'){
+				word_char=1;
+			}
+		}
     }
-    if (word_char) {
+    if (word_char==1) {
         wordcounter++;
     }
 
