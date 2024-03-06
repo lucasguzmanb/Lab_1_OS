@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
         printf("Error opening the directory\n");
         return -1;
     } else {
-        while (((entry = readdir(dir)) != NULL) && (dirSize != 4097)) { // path size can not be greater tha 4096, 4097 counting the null
+        while (((entry = readdir(dir)) != NULL) && (dirSize != 4097)) { // path size can not be greater than 4096, 4097 counting the null
             printf("%s\n", entry->d_name);
             dirSize += dirSize;
         }
